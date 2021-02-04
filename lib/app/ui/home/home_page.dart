@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     Image.asset(
                       "assets/images/regia_araci.png",
-                      fit: BoxFit.scaleDown,
+                      fit: BoxFit.contain,
                       height: 32,
                     ),
                     Text("ARACI.lab", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),)
