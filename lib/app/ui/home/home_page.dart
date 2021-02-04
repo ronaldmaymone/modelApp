@@ -36,7 +36,6 @@ class HomePage extends StatelessWidget {
                 ),
               ],
               expandedHeight: 200.0,
-              floating: false, //The title disappears on scroll up
               pinned: true,// The appbar goes out of the screen on scroll up
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
@@ -46,7 +45,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     Image.asset(
                       "assets/images/regia_araci.png",
-                      fit: BoxFit.contain,
+                      fit: BoxFit.scaleDown,
                       height: 32,
                     ),
                     Text("ARACI.lab", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),)
@@ -69,14 +68,16 @@ class HomePage extends StatelessWidget {
                   children: [
                     article(_),
                     Divider(),
-                    Container(child: markdownTitleWidget("# Relacionados"), height: 70,),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(child: markdownTitleWidget("# Relacionados"), height: 70,),
+                    ),
                     if (_.externalURL != null)
                       ListTile(
                           leading: relatedCard(_.imgPath??"assets/images/regia_araci.png"),
                           title: markdownTitleWidget("Acesse o documento"),
                           trailing: Icon(Icons.arrow_forward_ios),
                           onTap: () {
-                            print("ON TAP!!");
                             _.launchUniversalLink(_.externalURL);
                             // Get.toNamed(Routes.WEBVIEW, arguments: {"url":_.externalURL, "title":_.articleTitle});
                           }

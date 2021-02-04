@@ -12,8 +12,7 @@ Widget article(HomeController controller) {
       // controller.videoURL != null ? ytWidget() : Container(),
       Padding(
         padding: const EdgeInsets.all(8.0),
-        child: SizedBox(child: markdownTitleWidget("# ${controller
-            .articleTitle}" ?? "")),
+        child: SizedBox(child: markdownTitleWidget("# ${controller.articleTitle}" ?? "")),
       ),
       Padding(
         padding: const EdgeInsets.all(8.0),

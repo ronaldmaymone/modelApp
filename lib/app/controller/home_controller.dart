@@ -38,7 +38,6 @@ class HomeController extends GetxController {
   void onInit() async {
     if (routingStack.isEmpty) routingStack.push(1);
     await getArticle(routingStack.top());
-    print("Executando onInit details -----------------------");
     // initYoutubeController();
     super.onInit();
     // addArticle();
@@ -104,12 +103,12 @@ class HomeController extends GetxController {
   handlePopMenuClick(String value){
     // Get.snackbar("Função em desenvolvimento","",backgroundColor: Colors.blueGrey[900]);
     switch (value) {
-      case 'Logout':
+      case 'Sair':
         userRepository.eraseUserInformation();
         //TODO: Delete database.
         Get.offAllNamed(Routes.SPLASH);
         break;
-      case 'Settings':
+      default:
         Get.snackbar("Função em desenvolvimento","");
         break;
     }
